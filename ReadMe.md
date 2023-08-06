@@ -6,10 +6,10 @@ This repository contains code and additional resources including execution examp
 
 ## Repository Structure
 
-The structure consists of three main folders:
+The structure consists of four main folders:
 - Resources: contains various document types used during the thesis to generate illustrative Figures
 - Score: contains Python code responsible for calculating and plotting various metrics and trust scores 
-- Solutions: Subfolders contain all important information for the evaluation scenarios presented in the thesis
+- Solutions: subfolders contain all important information for the evaluation scenarios presented in the thesis
 - synDS: contains Python code capable of creating synthetic datasets, offering two approaches (MUST and MAY)
 to balance privacy and accuracy concerns.
 
@@ -36,7 +36,7 @@ Plots are automatically stored in the respective folder of the evaluation scenar
 │   │   ├── metrics
 │   │   └── weights
 │   ├── helpers.py
-│   ├── plot.py   
+│   └── plot.py   
 ├── Solutions # hold information of evaluation scenarios
 │   ├── S1DiabetesPredictionRF
 │   │   ├── AdvancedScoreMAY
@@ -79,8 +79,8 @@ cd trustworthyBlackbox
 
 2. Create a virtual environment and install the dependencies
 ```
-python -m venv /BBenv
-source BBenv/bin/activate
+python -m venv BBenv
+BBenv\Scripts\activate
 pip install -r requirements.txt
 ```
 
