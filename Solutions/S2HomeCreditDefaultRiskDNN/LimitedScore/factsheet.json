@@ -1,0 +1,199 @@
+{
+    "general": {
+        "target_column": "TARGET"
+    },
+    "fairness": {
+        "protected_feature": "CODE_GENDER",
+        "protected_values": [
+            1
+        ],
+        "favorable_outcomes": [
+            1
+        ],
+        "protected_group": "lambda x: x[protected_feature] == 1",
+        "favorable_outcome": "lambda x: x[target_column] == 1"
+    },
+    "explainability": {},
+    "robustness": {},
+    "methodology": {
+        "regularization": "none"
+    },
+    "scores": {
+        "fairness": {
+            "underfitting": NaN,
+            "overfitting": NaN,
+            "statistical_parity_difference": NaN,
+            "equal_opportunity_difference": NaN,
+            "average_odds_difference": NaN,
+            "disparate_impact": NaN,
+            "class_balance": NaN
+        },
+        "explainability": {
+            "algorithm_class": 1,
+            "correlated_features": NaN,
+            "model_size": NaN,
+            "feature_relevance": NaN
+        },
+        "robustness": {
+            "confidence_score": NaN,
+            "clique_method": NaN,
+            "loss_sensitivity": NaN,
+            "clever_score": NaN,
+            "er_fast_gradient_attack": NaN,
+            "er_carlini_wagner_attack": NaN,
+            "er_deepfool_attack": NaN
+        },
+        "methodology": {
+            "normalization": NaN,
+            "missing_data": NaN,
+            "regularization": 1,
+            "train_test_split": NaN,
+            "factsheet_completeness": 0
+        }
+    },
+    "properties": {
+        "fairness": {
+            "underfitting": {
+                "Non computable because": "'int' object has no attribute 'drop'"
+            },
+            "overfitting": {
+                "Non computable because": "'int' object has no attribute 'drop'"
+            },
+            "statistical_parity_difference": {
+                "Non computable because": "'int' object is not subscriptable"
+            },
+            "equal_opportunity_difference": {
+                "Non computable because": "'int' object has no attribute 'copy'"
+            },
+            "average_odds_difference": {
+                "Non computable because": "'int' object has no attribute 'copy'"
+            },
+            "disparate_impact": {
+                "Non computable because": "'int' object has no attribute 'copy'"
+            },
+            "class_balance": {
+                "Non computable because": "'int' object is not subscriptable"
+            }
+        },
+        "explainability": {
+            "algorithm_class": {
+                "dep": [
+                    "Depends on",
+                    "Model"
+                ],
+                "clf_name": [
+                    "model type",
+                    "Sequential"
+                ]
+            },
+            "correlated_features": {
+                "Non computable because": "'int' object has no attribute 'copy'"
+            },
+            "model_size": {
+                "Non computable because": "'int' object has no attribute 'shape'"
+            },
+            "feature_relevance": {
+                "Non computable because": "'int' object has no attribute 'copy'"
+            }
+        },
+        "robustness": {
+            "confidence_score": {
+                "non_computable": [
+                    "Non Computable Because",
+                    "Can only be calculated on models which provide prediction probabilities."
+                ]
+            },
+            "clique_method": {
+                "non_computable": [
+                    "Non Computable Because",
+                    "Can only be calculated on Tree-Based models."
+                ]
+            },
+            "loss_sensitivity": {
+                "non_computable": [
+                    "Non Computable Because",
+                    "Can only be calculated on Keras models."
+                ]
+            },
+            "clever_score": {
+                "non_computable": [
+                    "Non Computable Because",
+                    "Can only be calculated on Keras models."
+                ]
+            },
+            "er_fast_gradient_attack": {
+                "non_computable": [
+                    "Non Computable Because",
+                    "Can be calculated on either SVC or Logistic Regression models."
+                ]
+            },
+            "er_carlini_wagner_attack": {
+                "non_computable": [
+                    "Non Computable Because",
+                    "Can be calculated on either SVC or Logistic Regression models."
+                ]
+            },
+            "er_deepfool_attack": {
+                "non_computable": [
+                    "Non Computable Because",
+                    "Can be calculated on either SVC or Logistic Regression models."
+                ]
+            }
+        },
+        "methodology": {
+            "normalization": {
+                "Non computable because": "'int' object has no attribute 'iloc'"
+            },
+            "missing_data": {
+                "Non computable because": "'int' object has no attribute 'isna'"
+            },
+            "regularization": {
+                "dep": [
+                    "Depends on",
+                    "Factsheet"
+                ],
+                "regularization_technique": [
+                    "Regularization technique",
+                    "none"
+                ]
+            },
+            "train_test_split": {
+                "Non computable because": "unsupported format string passed to dict.__format__"
+            },
+            "factsheet_completeness": {
+                "dep": [
+                    "Depends on",
+                    "Factsheet"
+                ],
+                "model_name": [
+                    "Factsheet Property model name",
+                    "missing"
+                ],
+                "purpose_description": [
+                    "Factsheet Property purpose description",
+                    "missing"
+                ],
+                "domain_description": [
+                    "Factsheet Property domain description",
+                    "missing"
+                ],
+                "training_data_description": [
+                    "Factsheet Property training data description",
+                    "missing"
+                ],
+                "model_information": [
+                    "Factsheet Property model information",
+                    "missing"
+                ],
+                "authors": [
+                    "Factsheet Property authors",
+                    "missing"
+                ],
+                "contact_information": [
+                    "Factsheet Property contact information",
+                    "missing"
+                ]
+            }
+        }
+    }
+}

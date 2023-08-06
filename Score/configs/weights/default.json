@@ -1,0 +1,39 @@
+{
+    "fairness": {
+        "underfitting": 0.35,
+        "overfitting": 0.15,
+        "statistical_parity_difference": 0.15,
+        "equal_opportunity_difference": 0.2,
+        "average_odds_difference": 0.1,
+        "disparate_impact": 0.1,
+        "class_balance": 0.1
+    },
+    "explainability": {
+        "algorithm_class": 0.55,
+        "correlated_features": 0.15,
+        "model_size": 0.15,
+        "feature_relevance": 0.15
+    },
+    "robustness": {
+        "confidence_score": 0.2,
+        "clique_method": 0.2,
+        "loss_sensitivity": 0.2,
+        "clever_score": 0.2,
+        "er_fast_gradient_attack": 0.2,
+        "er_carlini_wagner_attack": 0.2,
+        "er_deepfool_attack": 0.2
+    },
+    "methodology": {
+        "normalization": 0.2,
+        "missing_data": 0.2,
+        "regularization": 0.2,
+        "train_test_split": 0.2,
+        "factsheet_completeness": 0.2
+    },
+    "pillars": {
+        "fairness": 0.25,
+        "explainability": 0.25,
+        "robustness": 0.25,
+        "methodology": 0.25
+    }
+}

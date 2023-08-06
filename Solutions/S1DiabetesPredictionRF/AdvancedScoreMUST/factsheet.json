@@ -1,0 +1,180 @@
+{
+    "general": {
+        "target_column": "diabetes"
+    },
+    "fairness": {
+        "protected_feature": "gender",
+        "protected_values": [
+            1
+        ],
+        "favorable_outcomes": [
+            1
+        ],
+        "protected_group": "lambda x: x[protected_feature] == 1",
+        "favorable_outcome": "lambda x: x[target_column] == 1"
+    },
+    "explainability": {},
+    "robustness": {},
+    "methodology": {
+        "regularization": "none"
+    },
+    "scores": {
+        "fairness": {
+            "disparate_impact": 5
+        },
+        "explainability": {
+            "algorithm_class": 4,
+            "model_size": 5,
+            "feature_relevance": 5
+        },
+        "robustness": {
+            "clique_method": 2
+        },
+        "methodology": {
+            "regularization": 1,
+            "factsheet_completeness": 0
+        }
+    },
+    "properties": {
+        "fairness": {
+            "disparate_impact": {
+                "Metric Description": "Is quotient of the ratio of samples from the protected group receiving a favorable prediction divided by the ratio of samples from the unprotected group receiving a favorable prediction",
+                "Depends on": "Model, Test Data, Factsheet (Definition of Protected Group and Favorable Outcome)",
+                "----------": "",
+                "|{x|x is protected, y_pred is favorable}": 311625,
+                "|{x|x is protected}|": 447216,
+                "Protected Favored Ratio": "P(y_hat=favorable|protected=True) = 69.68%",
+                "|{x|x is not protected, y_pred is favorable}|": 624060,
+                "|{x|x is not protected}|": 894432,
+                "Unprotected Favored Ratio": "P(y_hat=favorable|protected=False) = 69.77%",
+                "-----------": "",
+                "Formula": "Disparate Impact = Protected Favored Ratio / Unprotected Favored Ratio",
+                "Disparate Impact": "1.00",
+                "Score": "5"
+            }
+        },
+        "explainability": {
+            "algorithm_class": {
+                "dep": [
+                    "Depends on",
+                    "Model"
+                ],
+                "clf_name": [
+                    "model type",
+                    "RandomForestClassifier"
+                ]
+            },
+            "model_size": {
+                "dep": [
+                    "Depends on",
+                    "Training Data"
+                ],
+                "n_features": [
+                    "number of features",
+                    8
+                ]
+            },
+            "feature_relevance": {
+                "dep": [
+                    "Depends on",
+                    "Training Data and Model"
+                ],
+                "n_outliers": [
+                    "number of outliers in the importance distribution",
+                    2
+                ],
+                "pct_dist": [
+                    "percentage of feature that make up over 60% of all features importance",
+                    "50.00%"
+                ],
+                "importance": [
+                    "feature importance",
+                    {
+                        "value": [
+                            0.14799735920007112,
+                            0.13937866395875548,
+                            0.11877066280686226,
+                            0.11877066280686224,
+                            0.11877066280686224,
+                            0.11877066280686224,
+                            0.11877066280686224,
+                            0.11877066280686224
+                        ],
+                        "labels": [
+                            "blood_glucose_level",
+                            "HbA1c_level",
+                            "gender",
+                            "bmi",
+                            "smoking_history",
+                            "heart_disease",
+                            "hypertension",
+                            "age"
+                        ]
+                    }
+                ]
+            }
+        },
+        "robustness": {
+            "clique_method": {
+                "error_bound": [
+                    "Average error bound",
+                    "0.10"
+                ],
+                "error": [
+                    "Error",
+                    "0.1"
+                ],
+                "depends_on": [
+                    "Depends on",
+                    "Model"
+                ]
+            }
+        },
+        "methodology": {
+            "regularization": {
+                "dep": [
+                    "Depends on",
+                    "Factsheet"
+                ],
+                "regularization_technique": [
+                    "Regularization technique",
+                    "none"
+                ]
+            },
+            "factsheet_completeness": {
+                "dep": [
+                    "Depends on",
+                    "Factsheet"
+                ],
+                "model_name": [
+                    "Factsheet Property model name",
+                    "missing"
+                ],
+                "purpose_description": [
+                    "Factsheet Property purpose description",
+                    "missing"
+                ],
+                "domain_description": [
+                    "Factsheet Property domain description",
+                    "missing"
+                ],
+                "training_data_description": [
+                    "Factsheet Property training data description",
+                    "missing"
+                ],
+                "model_information": [
+                    "Factsheet Property model information",
+                    "missing"
+                ],
+                "authors": [
+                    "Factsheet Property authors",
+                    "missing"
+                ],
+                "contact_information": [
+                    "Factsheet Property contact information",
+                    "missing"
+                ]
+            }
+        }
+    }
+}

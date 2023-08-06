@@ -1,0 +1,262 @@
+{
+    "general": {
+        "target_column": "TARGET"
+    },
+    "fairness": {
+        "protected_feature": "CODE_GENDER",
+        "protected_values": [
+            1
+        ],
+        "favorable_outcomes": [
+            1
+        ],
+        "protected_group": "lambda x: x[protected_feature] == 1",
+        "favorable_outcome": "lambda x: x[target_column] == 1"
+    },
+    "explainability": {},
+    "robustness": {},
+    "methodology": {
+        "regularization": "none"
+    },
+    "scores": {
+        "fairness": {
+            "underfitting": NaN,
+            "overfitting": NaN,
+            "statistical_parity_difference": NaN,
+            "equal_opportunity_difference": NaN,
+            "average_odds_difference": NaN,
+            "disparate_impact": 5,
+            "class_balance": NaN
+        },
+        "explainability": {
+            "algorithm_class": 1,
+            "correlated_features": NaN,
+            "model_size": 5,
+            "feature_relevance": 1
+        },
+        "robustness": {
+            "confidence_score": NaN,
+            "clique_method": NaN,
+            "loss_sensitivity": 1,
+            "clever_score": 5,
+            "er_fast_gradient_attack": NaN,
+            "er_carlini_wagner_attack": NaN,
+            "er_deepfool_attack": NaN
+        },
+        "methodology": {
+            "normalization": NaN,
+            "missing_data": NaN,
+            "regularization": 1,
+            "train_test_split": NaN,
+            "factsheet_completeness": 0
+        }
+    },
+    "properties": {
+        "fairness": {
+            "underfitting": {
+                "Non computable because": "No active exception to reraise"
+            },
+            "overfitting": {
+                "Non computable because": "'NoneType' object has no attribute 'drop'"
+            },
+            "statistical_parity_difference": {
+                "Non computable because": "'NoneType' object is not subscriptable"
+            },
+            "equal_opportunity_difference": {
+                "Non computable because": "No active exception to reraise"
+            },
+            "average_odds_difference": {
+                "Non computable because": "No active exception to reraise"
+            },
+            "disparate_impact": {
+                "Metric Description": "Is quotient of the ratio of samples from the protected group receiving a favorable prediction divided by the ratio of samples from the unprotected group receiving a favorable prediction",
+                "Depends on": "Model, Test Data, Factsheet (Definition of Protected Group and Favorable Outcome)",
+                "----------": "",
+                "|{x|x is protected, y_pred is favorable}": 120000,
+                "|{x|x is protected}|": 145200,
+                "Protected Favored Ratio": "P(y_hat=favorable|protected=True) = 82.64%",
+                "|{x|x is not protected, y_pred is favorable}|": 240000,
+                "|{x|x is not protected}|": 290400,
+                "Unprotected Favored Ratio": "P(y_hat=favorable|protected=False) = 82.64%",
+                "-----------": "",
+                "Formula": "Disparate Impact = Protected Favored Ratio / Unprotected Favored Ratio",
+                "Disparate Impact": "1.00",
+                "Score": "5"
+            },
+            "class_balance": {
+                "Non computable because": "'NoneType' object is not subscriptable"
+            }
+        },
+        "explainability": {
+            "algorithm_class": {
+                "dep": [
+                    "Depends on",
+                    "Model"
+                ],
+                "clf_name": [
+                    "model type",
+                    "Sequential"
+                ]
+            },
+            "correlated_features": {
+                "Non computable because": "'NoneType' object has no attribute 'copy'"
+            },
+            "model_size": {
+                "dep": [
+                    "Depends on",
+                    "Training Data"
+                ],
+                "n_features": [
+                    "number of features",
+                    8
+                ]
+            },
+            "feature_relevance": {
+                "dep": [
+                    "Depends on",
+                    "Training Data and Model"
+                ],
+                "n_outliers": [
+                    "number of outliers in the importance distribution",
+                    1
+                ],
+                "pct_dist": [
+                    "percentage of feature that make up over 60% of all features importance",
+                    "0.00%"
+                ],
+                "importance": [
+                    "feature importance",
+                    {
+                        "value": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "labels": [
+                            "AMT_INCOME_TOTAL",
+                            "CNT_FAM_MEMBERS",
+                            "REGION_RATING_CLIENT",
+                            "NAME_EDUCATION_TYPE",
+                            "AMT_CREDIT",
+                            "FLAG_OWN_REALTY",
+                            "FLAG_OWN_CAR",
+                            "CODE_GENDER"
+                        ]
+                    }
+                ]
+            }
+        },
+        "robustness": {
+            "confidence_score": {
+                "non_computable": [
+                    "Non Computable Because",
+                    "Can only be calculated on models which provide prediction probabilities."
+                ]
+            },
+            "clique_method": {
+                "non_computable": [
+                    "Non Computable Because",
+                    "Can only be calculated on Tree-Based models."
+                ]
+            },
+            "loss_sensitivity": {
+                "loss_sensitivity": [
+                    "Average gradient value of the loss function",
+                    "299004.00"
+                ],
+                "depends_on": [
+                    "Depends on",
+                    "Model"
+                ]
+            },
+            "clever_score": {
+                "clever_score": [
+                    "CLEVER Score",
+                    "100.00"
+                ],
+                "depends_on": [
+                    "Depends on",
+                    "Model"
+                ]
+            },
+            "er_fast_gradient_attack": {
+                "non_computable": [
+                    "Non Computable Because",
+                    "Can be calculated on either SVC or Logistic Regression models."
+                ]
+            },
+            "er_carlini_wagner_attack": {
+                "non_computable": [
+                    "Non Computable Because",
+                    "Can be calculated on either SVC or Logistic Regression models."
+                ]
+            },
+            "er_deepfool_attack": {
+                "non_computable": [
+                    "Non Computable Because",
+                    "Can be calculated on either SVC or Logistic Regression models."
+                ]
+            }
+        },
+        "methodology": {
+            "normalization": {
+                "Non computable because": "'NoneType' object has no attribute 'iloc'"
+            },
+            "missing_data": {
+                "Non computable because": "'NoneType' object has no attribute 'isna'"
+            },
+            "regularization": {
+                "dep": [
+                    "Depends on",
+                    "Factsheet"
+                ],
+                "regularization_technique": [
+                    "Regularization technique",
+                    "none"
+                ]
+            },
+            "train_test_split": {
+                "Non computable because": "unsupported format string passed to dict.__format__"
+            },
+            "factsheet_completeness": {
+                "dep": [
+                    "Depends on",
+                    "Factsheet"
+                ],
+                "model_name": [
+                    "Factsheet Property model name",
+                    "missing"
+                ],
+                "purpose_description": [
+                    "Factsheet Property purpose description",
+                    "missing"
+                ],
+                "domain_description": [
+                    "Factsheet Property domain description",
+                    "missing"
+                ],
+                "training_data_description": [
+                    "Factsheet Property training data description",
+                    "missing"
+                ],
+                "model_information": [
+                    "Factsheet Property model information",
+                    "missing"
+                ],
+                "authors": [
+                    "Factsheet Property authors",
+                    "missing"
+                ],
+                "contact_information": [
+                    "Factsheet Property contact information",
+                    "missing"
+                ]
+            }
+        }
+    }
+}
